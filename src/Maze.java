@@ -147,6 +147,13 @@ public class Maze {
      */
     public boolean isValidCell(int row, int col) {
         // TODO: Complete this function
+        for(int i = 0; i < row; i++){
+            for (int j = 0; j < col; j++){
+                if (mazeGrid[i][j].equals("A") || mazeGrid[i][j].equals("B") || mazeGrid[i][j].equals("#")){
+                    return false;
+                }
+            }
+        }
         return true;
     }
 }

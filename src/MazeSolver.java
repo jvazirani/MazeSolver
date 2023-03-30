@@ -5,6 +5,7 @@
  */
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class MazeSolver {
     private Maze maze;
@@ -28,6 +29,8 @@ public class MazeSolver {
      */
     public ArrayList<MazeCell> getSolution() {
         // TODO: Get the solution from the maze
+        Stack<MazeCell> order = new Stack<MazeCell>();
+
         // Should be from start to end cells
         return null;
     }
@@ -39,6 +42,7 @@ public class MazeSolver {
     public ArrayList<MazeCell> solveMazeDFS() {
         // TODO: Use DFS to solve the maze
         // Explore the cells in the order: NORTH, EAST, SOUTH, WEST
+        // Stack
         return null;
     }
 
@@ -49,6 +53,8 @@ public class MazeSolver {
     public ArrayList<MazeCell> solveMazeBFS() {
         // TODO: Use BFS to solve the maze
         // Explore the cells in the order: NORTH, EAST, SOUTH, WEST
+        // Queue
+        // solve recursively
         return null;
     }
 
