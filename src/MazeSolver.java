@@ -36,17 +36,16 @@ public class MazeSolver {
         Stack<MazeCell> stack = new Stack<MazeCell>();
         MazeCell currCell = maze.getEndCell();
         stack.push(currCell);
-        //
+        // Starts at the end of the maze and goes through the parent cells till gets to the beginning
         while (currCell != maze.getStartCell()){
             currCell = currCell.getParent();
             stack.push(currCell);
         }
+        // Moves the values from the stack to array list
         while(!stack.empty()){
             solution.add(stack.pop());
         }
         return solution;
-
-        // Should be from start to end cells
     }
 
     /**
@@ -108,7 +107,7 @@ public class MazeSolver {
         // First cell goes at the bottom
         queue.add(maze.getStartCell());
         maze.getStartCell().setExplored(true);
-        // While the stack is not empty (once it's empty everything has been visited)
+        // While the queue is not empty (once it's empty everything has been visited)
         while(!queue.isEmpty()){
             // Takes the most recent one off so the child becomes the current cell
             MazeCell currCell = queue.remove();
