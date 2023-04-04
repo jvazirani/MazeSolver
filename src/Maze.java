@@ -147,12 +147,21 @@ public class Maze {
      */
     public boolean isValidCell(int row, int col) {
         // TODO: Complete this function
-        for(int i = 0; i < row; i++){
-            for (int j = 0; j < col; j++){
-                if (mazeGrid[i][j].equals("A") || mazeGrid[i][j].equals("B") || mazeGrid[i][j].equals("#")){
-                    return false;
-                }
-            }
+        // Checks if row or col is out of bounds
+        if (row >= numRows || col >= numCols) {
+            return false;
+        }
+        // Checks if row or col is out bound
+        if (row < 0 || col < 0) {
+            return false;
+        }
+        // Checks if a sport is at a wall
+        if (mazeGrid[row][col].isWall()) {
+            return false;
+        }
+        // Checks if a cell has been explored
+        if (mazeGrid[row][col].isExplored()) {
+            return false;
         }
         return true;
     }
